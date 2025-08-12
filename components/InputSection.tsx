@@ -24,6 +24,7 @@ const TabButton: React.FC<{
     onClick={onClick}
     role="tab"
     aria-selected={isActive}
+    aria-label={label}
     className={`flex-1 flex items-center justify-center gap-2 p-3 text-sm font-medium rounded-t-lg border-b-2 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-secondary ${
       isActive
         ? 'border-brand-primary text-content-strong'
@@ -31,7 +32,7 @@ const TabButton: React.FC<{
     }`}
   >
     {icon}
-    {label}
+    <span className="hidden sm:inline">{label}</span>
   </button>
 );
 
@@ -104,7 +105,7 @@ export const InputSection: React.FC<InputSectionProps> = ({
         </div>
       </div>
       
-      <div className="flex-grow flex flex-col min-h-[400px]">
+      <div className="flex-grow flex flex-col min-h-[300px] md:min-h-[400px]">
         {activeTab === 'paste' && (
             <textarea
                 value={documentContent}

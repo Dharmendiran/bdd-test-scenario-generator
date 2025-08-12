@@ -25,7 +25,7 @@ export const Header: React.FC<HeaderProps> = ({
               <AppIcon className="w-8 h-8 text-white" />
             </div>
             <div className="min-w-0">
-                <h1 className="text-xl md:text-2xl font-bold text-content-strong truncate">GenAI BDD Scenario Generator</h1>
+                <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-content-strong truncate">GenAI BDD Scenario Generator</h1>
                 <p className="text-sm text-content-200 hidden sm:block">From design docs to Gherkin tests in seconds.</p>
             </div>
         </div>

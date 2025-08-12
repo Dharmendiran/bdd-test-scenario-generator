@@ -225,7 +225,7 @@ export default function App(): React.ReactNode {
           isHistoryVisible={isHistoryVisible}
           isSettingsVisible={isSettingsVisible}
         />
-        <main className="flex-grow container mx-auto p-4 md:p-6 lg:p-8 flex flex-col lg:flex-row gap-8">
+        <main className="flex-grow container mx-auto p-4 md:p-6 lg:p-8 flex flex-col lg:flex-row gap-4 lg:gap-8">
             <div className="lg:w-1/2 flex flex-col">
                 <InputSection
                   documentContent={documentContent}

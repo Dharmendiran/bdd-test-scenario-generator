@@ -1,3 +1,4 @@
+
 import React, { useCallback } from 'react';
 import type { BddScenario } from '../types';
 import { ScenarioCard } from './ScenarioCard';
@@ -100,7 +101,7 @@ export const OutputSection: React.FC<OutputSectionProps> = ({ scenarios, isLoadi
             </button>
         </div>
       </div>
-      <div className="flex-grow bg-base-100 border border-base-300 rounded-lg overflow-y-auto min-h-[400px]">
+      <div className="flex-grow bg-base-100 border border-base-300 rounded-lg overflow-y-auto min-h-[300px] md:min-h-[400px]">
         {isLoading ? (
           <LoadingState />
         ) : error ? (

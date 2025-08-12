@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GenAI BDD Test Scenario Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class', // Enable class-based dark mode
+        theme: {
+          extend: {
+            colors: {
+              'brand-primary': 'rgb(var(--color-brand-primary) / <alpha-value>)',
+              'brand-secondary': 'rgb(var(--color-brand-secondary) / <alpha-value>)',
+              'base-100': 'rgb(var(--color-base-100) / <alpha-value>)',
+              'base-200': 'rgb(var(--color-base-200) / <alpha-value>)',
+              'base-300': 'rgb(var(--color-base-300) / <alpha-value>)',
+              'content-100': 'rgb(var(--color-content-100) / <alpha-value>)',
+              'content-200': 'rgb(var(--color-content-200) / <alpha-value>)',
+              'content-strong': 'rgb(var(--color-content-strong) / <alpha-value>)',
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      :root {
+        /* Default to dark theme values to prevent FOUC */
+        --color-base-100: 15 23 42; /* slate-900 */
+        --color-base-200: 30 41 59; /* slate-800 */
+        --color-base-300: 51 65 85; /* slate-700 */
+        --color-content-100: 148 163 184; /* slate-400 */
+        --color-content-200: 100 116 139; /* slate-500 */
+        --color-content-strong: 226 232 240; /* slate-200 */
+      }
+
+      html.light {
+        --color-base-100: 255 255 255; /* white */
+        --color-base-200: 241 245 249; /* slate-100 */
+        --color-base-300: 226 232 240; /* slate-200 */
+        --color-content-100: 71 85 105;  /* slate-600 */
+        --color-content-200: 100 116 139; /* slate-500 */
+        --color-content-strong: 30 41 59; /* slate-800 */
+      }
+
+      html.dark {
+        --color-base-100: 15 23 42; /* slate-900 */
+        --color-base-200: 30 41 59; /* slate-800 */
+        --color-base-300: 51 65 85; /* slate-700 */
+        --color-content-100: 148 163 184; /* slate-400 */
+        --color-content-200: 100 116 139; /* slate-500 */
+        --color-content-strong: 226 232 240; /* slate-200 */
+      }
+
+      /* --- Accent Colors --- */
+      [data-color='teal'] { --color-brand-primary: 20 184 166; --color-brand-secondary: 13 148 136; }
+      html.light[data-color='teal'] { --color-brand-primary: 13 148 136; --color-brand-secondary: 15 118 110; }
+
+      [data-color='blue'] { --color-brand-primary: 99 102 241; --color-brand-secondary: 79 70 229; }
+      html.light[data-color='blue'] { --color-brand-primary: 79 70 229; --color-brand-secondary: 67 56 202; }
+      
+      [data-color='rose'] { --color-brand-primary: 244 63 94; --color-brand-secondary: 225 29 72; }
+      html.light[data-color='rose'] { --color-brand-primary: 225 29 72; --color-brand-secondary: 190 18 60; }
+      
+      [data-color='amber'] { --color-brand-primary: 245 158 11; --color-brand-secondary: 217 119 6; }
+      html.light[data-color='amber'] { --color-brand-primary: 217 119 6; --color-brand-secondary: 180 83 9; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "react": "https://esm.sh/react@^19.1.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.13.0",
+    "jspdf": "https://esm.sh/jspdf@2.5.1",
+    "mammoth": "https://esm.sh/mammoth@1.7.2",
+    "three": "https://esm.sh/three@0.134.0",
+    "vanta/": "https://esm.sh/vanta@0.5.24/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-base-100">
+    <div id="vanta-bg" class="fixed top-0 left-0 w-full h-full z-0"></div>
+    <div id="root" class="relative z-10"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

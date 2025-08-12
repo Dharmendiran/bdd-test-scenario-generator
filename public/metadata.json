@@ -1,0 +1,5 @@
+{
+  "name": "GenAI BDD Test Scenario Generator",
+  "description": "A tool that uses GenAI to analyze product design documents and automatically generate Gherkin-style BDD test scenarios, improving test coverage and efficiency.",
+  "requestFramePermissions": []
+}
